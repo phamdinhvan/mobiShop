@@ -1,0 +1,790 @@
+/* Mới thêm */
+:root{
+	--color1: yellow;
+	--color2: Pink;
+	--backg1:#9b59b6;
+    --backg2:#3498db;
+    --text :#26ade4;
+}
+
+.mHang{
+	padding: 0 12px;
+	font-size: 15px;
+}
+
+.Hang{
+	padding: 0 12px;
+	font-size: 20px;
+}
+
+.navigat{
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
+	width: auto;
+	box-sizing: content-box;
+	cursor: pointer;
+	align-self: start;
+	align-items: flex-start;
+}
+
+.navigat1{
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
+	width: auto;
+	box-sizing: content-box;
+	cursor: pointer;
+	align-self: start;
+	align-items: flex-start;
+}
+
+.navigat2{
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
+	width: auto;
+	box-sizing: content-box;
+	cursor: pointer;
+	align-self: start;
+	align-items: flex-start;
+}
+
+.Filter{
+	padding: 0 12px;
+	font-size: 20px;
+}
+
+.Search{
+	margin-top: 20px;
+	margin-left: 10px;
+	position: relative;
+}
+
+.Search input{
+	margin-top: 20px;
+	margin-left: 10px;
+	width: 80%;
+	font-size: 15px;
+	position: relative;
+	padding: 5px;
+}
+
+.chitietright{
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+h2{
+	font-size: 30px;
+	width: 100%;
+}
+
+.Filter-div{
+	background: transparent;
+}
+
+.Filter-div a{
+	padding: 0 12px;
+	font-size: 15px;
+	transition: 0.3s;
+}
+
+.Filter-div a:hover{
+	font-size: 20px;
+	background: linear-gradient(to top left,var(--color1),var(--color2));
+	border-radius: 10;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Baloo Chettan 2", cursive;
+}
+/*Header*/
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;   
+}
+
+header {
+    width: 100vw;
+    height: 50vh;
+    background: url("../images/backgroundNewyear.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background:rgba(0,0,0,0.5);
+}
+
+header input{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 0;
+    z-index: 12;
+    cursor:pointer;
+    position:  fixed;
+}
+
+header input:checked ~ .menu-icon .menu-line::after{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+header input:checked ~ .menu-icon .menu-line::before{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+header input:checked ~ .menu-icon .menu-line{
+    transform: rotate(135deg);
+    transition: 0.3s;
+}
+
+header input:checked ~ .menu-item{
+    top: 0;
+}
+
+.menu-icon{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 12px;
+    left: 12px;
+	opacity: 1;
+	z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-line{
+    height: 4px;
+    width: 100%;
+    background: var(--color1 );
+    position: relative;
+    top: 0px;
+}
+.menu-line::before{
+    content: "";
+    display: block;
+    width:100%;
+    height: 4px;
+    position: absolute;
+    background: var(--color1 );
+    top: -14px;
+    transition: 0.5s;
+}
+.menu-line::after{
+    content: "";
+    display: block;
+    width:100%;
+    height: 4px;
+    position: absolute;
+    top: 14px;
+    transition: 0.5s;
+    background: var(--color1 );
+}
+
+.menu-item{
+    position:fixed;
+    width: 100vw;
+    height: 10vh;
+    background: rgba(0,0, 0, 0.7);
+	top: -100%;
+	display: table;
+    z-index: 10;
+    transition: 1s;
+}
+
+.menu-item a{
+	color: var(--color1);
+	height:60px;
+	padding: 10px 20px;
+	width: auto;
+	margin: 20px;
+	position: relative;
+	top: 30px;
+    border-radius: 20px;
+	font-size: 25px;
+    animation: MenuAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: 0.2s;
+}
+
+.menu-item a:hover{
+	background: gray;
+	border: 2px solid var(--color1);
+	font-size: 30px;
+}
+
+.header-text{
+    position: absolute;
+}
+
+.header-text h1{
+    font-size: 100px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+.header-text h2{
+    font-size: 50px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.header-text a{
+    padding:15px 40px;
+    background: var(--color1);
+    color: #000;
+    border-radius: 50px;
+    font-size: 25px;
+    opacity: 0.3;
+    animation: headerAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: 0.5s;
+}
+
+.header-text a:hover{
+    background: transparent;
+    color: var(--color1);
+    border:2px solid var(--color1);
+}
+
+@keyframes headerAnimation{
+    0% {
+        opacity: 0.4;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.4;
+    }
+}
+
+/*Login*/
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../images/background01.jpg);
+}
+
+.form-login{
+	width: 350px;
+	height: 550px;
+	color:black;
+	background: #fff;
+	border-radius: 20px;
+	padding: 40px 30px;
+}
+
+.form-login h1{
+	margin-bottom: 60px;
+	color: red;
+	opacity: 1;
+	font-size: 30px;
+	text-decoration-color: white;
+}
+
+.form-input{
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.form-input input{
+	width: 100%;
+	height: 45px;
+	font-size: 20px;
+	border: none;
+	padding: 10px;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #dddddd;
+	cursor: pointer;
+}
+
+.form-login span {
+	text-align: center;
+	width: 100%;
+	align-items: center;
+}
+
+.login-button{
+	height: 35px;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 20px;
+	margin-bottom: 30px;
+	background: linear-gradient(to top left,var(--color1),var(--color2));
+}
+
+.form-input label{
+	position: absolute;
+	left: 12px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	transform: translateY(-45px);
+	bottom: 12px;
+	transition: 0.5s;
+}
+
+.form-login span{
+	font-size: 15px;
+}
+
+.login-form span a {
+    text-decoration: none;
+}
+
+.form-input label.focus{
+	transform: translateY(-45px);
+}
+
+/* Tạo tài khoảng */
+.body-create{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../images/background03.jpg);
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-create{
+	width: 340px;
+	height: 600px;
+	border-radius: 15px;
+	background:#fff;
+	position: relative;
+	overflow: hidden;
+}
+.form-main{
+	position: relative;
+}
+
+.container-create h1{
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: red;
+}
+.container-create form{
+	position: absolute;
+	top: 100px;
+	padding: 0 20px;
+	width: 340px;
+	transition: 0.5s;
+}
+
+.container-create form h1{
+	color: #3333;
+	margin-bottom: 40px;
+}
+
+.container-create form span{
+	color: red;
+	width: 100%;
+	margin-right: 100px;
+	margin-bottom: 20px;
+}
+
+.form-second{
+	left: -340px;
+
+}
+
+.form-third{
+	left: 340px;
+}
+
+.form-step span{
+	font-size: 15px;
+}
+
+.container-create form input{
+	height: 35px;
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 10px;
+	border:none;
+	border-bottom: 2px solid #cccc;
+	background: transparent;
+}
+
+.container-create form button{
+	height: 35px;
+	width: 100px;
+	background: linear-gradient(to right,var(--backg1),var(--backg2));
+	border-radius: 5px;
+	border: none;
+	margin-top: 50px;
+	color: white;
+	cursor: pointer;
+}
+
+.form-step{
+	display: flex;
+	height: 40px;
+	border-bottom: 2px solid #cccc;
+	position: relative;
+}
+
+.form-step span{
+	display: block;
+	width: 100px;
+	line-height: 40px;
+}
+
+.line{
+	position: absolute;
+	width:100px;
+	height: 40px;
+	transition: 0.5s;
+	opacity: 0.5;
+	background: linear-gradient(to right,var(--backg1),var(--backg2));
+}
+
+.line::before{
+	content: '';
+	position: absolute;
+	border-bottom: 20px solid transparent;
+	border-top: 20px solid transparent;
+	border-left: 20px solid #3498db;
+	border-right: 20px solid transparent;
+	right: -40px;
+}
+
+body{
+	font-family: tahoma, helvetica, arial, sans-serif;
+	font-size: 10px;
+	background:url(../img/page_bg.gif);
+	margin:0px;
+	padding:0px;
+}
+
+#warraper{
+	margin:auto;
+	text-align:left;
+	width:auto;
+	border-left:2px solid #FFF;
+	border-right:2px solid #FFF;
+	margin-bottom:10px;
+	background:#FFF;
+	color:000;
+}
+
+#menu{
+	width:100%;
+	height:40px;
+	background-image: url(../images/happynewyear.jpg);
+}
+
+#menu ul{
+	width:100%;
+	height:40px;
+	list-style:none;
+	padding-left:10px;
+}
+
+#menu ul li{
+	float:left;
+	line-height:40px;
+	text-align:center;
+	width:80px;
+	height:40px;
+}
+ 
+#menu ul li a{
+	text-decoration:none;
+	color:#fff;
+	font-size:15px;
+	display:block;
+}
+
+#menu ul li:hover{
+	background:#39F;
+}
+
+#sidebar{
+	width:220px;
+	height:1200px;
+	margin:0;
+	padding:0;
+	background:#FFF;
+	border-bottom: 2px solid #FFF;
+	float:left;
+	margin-bottom:10px;
+}
+
+
+#footer{
+	clear:both;
+	background:#C80000 url(../img/footer_bg.gif) repeat-x;
+	padding:8px 8px 5px 8px;
+	text-align:center;
+	border-bottom: 2px solid #FFF;
+	font-weight:bold;
+	color:#FFF;
+}
+
+
+#login_nav{
+	color:#FFF;
+	font-weight:bold;
+	text-decoration:none;
+	position:absolute;
+	width: 1100px;
+	margin-left:220px;
+	margin-top:-40px;
+	text-align:right;
+}
+
+a{
+	text-decoration: none;
+}
+
+#sidebar dl dt{
+	background:#C80000 url(../img/dt_bg.gif) bottom repeat-x;
+	color:#FFF;
+	margin: 2px 2px 1px 2px;
+	padding: 6px 0px;
+	text-align:center;
+	font-weight:bold;
+}
+
+#sidebar dl{
+	margin:0px;
+	padding:0px;
+}
+
+#sidebar dl dd{
+	background: #227293;
+	border-bottom: 1px solid #659DB4;
+	margin: 0px 2px;
+	padding:0px;
+}
+
+#sidebar dl dd a{
+	color:#FFF;
+	font-weight:bold;
+	padding:3px 22px;
+	display:block;
+}
+
+#sidebar dl dd a:hover{
+	background: #74A7B7;
+}
+
+#content h2{
+	font: bold 30px arial;
+	color: #39F;
+	padding-left:20px;
+}
+
+.box{
+	margin:5px;
+	float:left;
+	width:250px;
+	text-align:center;
+}
+
+.box:nth-child(even){
+	border-top: 5px solid rgb(156, 211, 165);
+	margin-left:15px;
+}
+
+.box:nth-child(odd){
+	border-top: 5px solid rgb(119, 184, 219);
+	margin-left:15px;
+}
+
+.box img{
+	width:auto;
+	height:150px;
+}
+
+.pname{
+	font: bold 14px arial;
+	color:#F39;
+	margin-top:5px;
+}
+
+.pprice{
+	font: bold 12px arial;
+	color:#F30;
+}
+
+.action{
+	font: italic bold 10px arial;
+	margin-right:30px;
+	margin-bottom:10px;
+	color:#F96;
+	text-align:right;
+}
+
+#chitietsanpham{
+	padding: 10px;
+	min-height:220px;
+}
+
+#chitietleft{
+	float:left;
+	margin-bottom:10px;
+}
+
+#chitietleft img{
+	width:auto;
+	height:150px;
+}
+
+#chitietright{
+	float:left;
+	width:auto;
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+#mota{
+	clear:both;
+	font-style:italic;
+	font-size:12px;
+}
+
+.label{
+	width:150px;
+	text-align:right;
+	font-size:13px;
+	display:inline-block;
+	margin-right:5px;
+}
+
+.data{
+	font-size:14px;
+	font-weight:bold;
+	color:#666;
+}
+
+.productname{
+	font-size:18px;
+	font-weight:bold;
+	color:#F69;
+}
+
+.price{
+	font-size:18px;
+	font-weight:bold;
+	color:#F93;
+	
+}
+
+.factory{
+	font-size:16px;
+	font-weight:bold;
+	color:#3C6;
+}
+
+.GioHang{
+	text-align:center;
+}
+
+#quanlygiohang{
+	padding: 5px;
+	text-align:center;
+}
+
+#quanlygiohang h1{
+	color: #F63;
+	font-weight:bold;
+}
+
+#quanlygiohang table{
+	border: 1px solid #369;
+	width: 530px;
+	padding: 0;
+	border-spacing: 0px;
+	text-align: left;
+}
+
+#quanlygiohang table tr td, #quanlygiohang table tr th{
+	border: 1px solid #369;
+	margin:0;
+	padding:5px;
+}
+
+#quanlygiohang table tr th{
+	text-align:center;
+}
+
+.loaihang{
+	background-color: #FED101;
+	height: 60px;
+	width: 100%;
+    overflow: hidden;
+}
+.loaihang nav{
+	max-width: 1200px;
+    margin: auto;
+    min-width: 1024px;
+}
+nav {
+    background: #fed700;
+    margin: 0;
+    padding: 0;
+    display: table;
+    *display: block;
+    *float: none;
+}
+.loaihang nav a {
+    padding: 0 12px;
+    display: table-cell !important;
+    vertical-align: middle;
+	height: 60px;
+	width: 80px;
+	text-align: center;
+	border-radius: 10px;
+	margin: auto;
+    color: #000;
+	font-size: 14px;
+	transition: 0.5s;
+}
+
+.loaihang nav a:hover{
+	font-size: 20px;
+	font-weight: bold;
+	background: linear-gradient(to right,var(--backg1),var(--backg2));
+}
+
